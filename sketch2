@@ -1,0 +1,30 @@
+let width= 400
+let height =400
+
+function setup(){
+  createCanvas(400, 400);
+  background(255);
+  
+  let square_size =20
+  let count_square_line = width/square_size
+  let count_square_col = height/square_size
+  
+  
+for(let ix =0; ix<count_square_line; ix++){
+  for(let iy = 0; iy<count_square_col; iy++){
+  
+    let size = (iy/count_square_col) * square_size
+    strokeWeight((ix/count_square_line)*4)
+    
+    let x = ix* square_size
+    let y = iy * square_size
+    
+   translate(x,y)
+   rotate(PI* (iy/count_square_col))
+    rect(0, 0, size,size)
+    resetMatrix()
+  }
+}
+  
+}
+
